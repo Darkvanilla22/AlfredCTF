@@ -11,7 +11,7 @@ Here's the results to that scan:
 
 ![image](https://user-images.githubusercontent.com/53369798/111731172-45cd3a80-8849-11eb-835d-0f8e98974e9d.png)
 
-As you can see, we have three open ports: 80, 3389, and 8080.
+As you can see, we have three open ports: **80, 3389, and 8080**.
 
 Let's check out the website on port 80:
 
@@ -25,7 +25,7 @@ Again, it doesn't look like there is anything hiding from us in plain sight. I'l
 
 ![image](https://user-images.githubusercontent.com/53369798/111732777-b45fc780-884c-11eb-95ac-c4a25dbbdd3f.png)
 
-Looks like a Jenkins login page. Through the power of a quick guess, I tried out credentials "admin:admin" to see if their was any default login credentials that have been set. Lo and behold, that was the case!
+Looks like a Jenkins login page. Through the power of a quick guess, I tried out credentials "**admin:admin**" to see if their was any default login credentials that have been set. Lo and behold, that was the case!
 >Make it a habit to always check for default credentials went probing for initial access! It will save you lots of time and frustration! "admin:password" is also a possible combination to try out too!
 
 Now that we're in, let us figure out what to do from here. A good place to start is finding out where we're able to execute commands to system. Here's a view of the dashboard after logging in:
