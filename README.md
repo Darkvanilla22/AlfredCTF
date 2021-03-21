@@ -110,3 +110,8 @@ Now that we have an admin token impersonated, we can use this to leverage our wa
 ![image](https://user-images.githubusercontent.com/53369798/111921997-f74cb580-8a6d-11eb-8b1f-ee615d0a0f79.png)
 >In this system, the PID (Process ID) for "_services.exe_" is 668
 
+Now that we have privileges equivalent to that of a root user, we can now obtain and read the root.txt file waiting for us:
+
+![image](https://user-images.githubusercontent.com/53369798/111922113-7e9a2900-8a6e-11eb-8bfb-d32fa61cebb0.png)
+
+And that's the end of this room! I really did enjoy this CTF!
