@@ -88,5 +88,25 @@ Now, we'll start a listener in Metasploit to await for an incoming connection re
 
 And now to start the payload:
 
-![image](https://user-images.githubusercontent.com/53369798/111919712-c070a280-8a61-11eb-8710-b0a083928996.png)
+![image](https://user-images.githubusercontent.com/53369798/111921716-7640ee80-8a6c-11eb-9757-c9b1a877df0b.png)
+>The reason as to why I'm no longer in Bruce's directoy is simple: my previous session timed out and I just started up a new session
+
+And now we have a meterpreter session!:
+
+![image](https://user-images.githubusercontent.com/53369798/111921752-b86a3000-8a6c-11eb-87cf-73678d9a3126.png)
+>I had some diffculty getting a stable session, but eventually it worked out. I think there was something wrong with the machine itself, but that's ok
+
+Now that we're in, lets check out what privileges we have:
+
+![image](https://user-images.githubusercontent.com/53369798/111921807-febf8f00-8a6c-11eb-8abf-ad97331b836d.png)
+>"SeDebugPrivilege" and "SeImpersonatePrivilege" are both enabled, those will prove to be useful
+
+As we can see, we've got some privileges that are beneficial to us in order to impersonate our authentication tokens. To further exploit these, we can utilize the "incognito" module in Metasploit as follows:
+
+![image](https://user-images.githubusercontent.com/53369798/111921925-96bd7880-8a6d-11eb-8bea-b38155b52fce.png)
+
+Now that we have an admin token impersonated, we can use this to leverage our way into a root process (such as _services.exe_). To do this, we can use the "migrate" command in meterpreter to do just that:
+
+![image](https://user-images.githubusercontent.com/53369798/111921997-f74cb580-8a6d-11eb-8b1f-ee615d0a0f79.png)
+>In this system, the PID (Process ID) for "_services.exe_" is 668
 
